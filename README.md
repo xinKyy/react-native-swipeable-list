@@ -4,7 +4,8 @@
 [![Downloads](https://img.shields.io/npm/dm/react-native-swipeable-list.svg?sanitize=true)](https://npmcharts.com/compare/react-native-swipeable-list?minimal=true)
 ![License](https://img.shields.io/npm/l/react-native-swipeable-list?color=brightgreen)
 ![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
-[![Build status](https://build.appcenter.ms/v0.1/apps/13534511-14df-4ea0-b460-22eb6d84e8fe/branches/main/badge)](https://appcenter.ms)
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/esthor/react-native-swipeable-list?utm_source=oss&utm_medium=github&utm_campaign=esthor%2Freact-native-swipeable-list&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+<!-- [![Build status](https://build.appcenter.ms/v0.1/apps/13534511-14df-4ea0-b460-22eb6d84e8fe/branches/main/badge)](https://appcenter.ms) -->
 
 A zero-dependency, Swipeable FlatList for React-Native with Quick Actions, Gestures, and Animations.
 
