@@ -10,7 +10,15 @@ A zero-dependency, Swipeable FlatList for React-Native with Quick Actions, Gestu
 
 ![animated screenshot of a swipeable flatlist email inbox mockup using react-native-swipeable-list](images/react-native-swipeable-list-demo2.gif)
 
-## Usage
+## Features
+
+- ✅ **TypeScript 支持** - 完整的类型定义和泛型支持
+- ✅ **高性能** - 基于 React Native 的 FlatList 构建
+- ✅ **手势友好** - 支持触摸手势和动画
+- ✅ **可定制** - 丰富的配置选项和样式定制
+- ✅ **跨平台** - 支持 iOS 和 Android
+
+## Installation
 
 1. Install the package in your project: `npm install react-native-swipeable-list` or `yarn add react-native-swipeable-list`
 
@@ -25,6 +33,10 @@ It can be passed additional props:
 - `maxSwipeDistance` - Maximum distance to open to after a swipe. Type `number || (Object => number)`
 
 - `renderQuickActions` - Callback method to render the view that will be unveiled on swipe. Type `renderItemType` (which provides `index` and  `item`, which will be very useful for performing actions on your items)
+
+## TypeScript Support
+
+This library now includes full TypeScript support! Check out the [TypeScript documentation](TYPESCRIPT.md) for detailed usage examples and type definitions.
 
 ## Example
 

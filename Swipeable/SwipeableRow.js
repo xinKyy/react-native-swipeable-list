@@ -198,7 +198,7 @@ class SwipeableRow extends React.Component {
         );
 
         return (
-            <View {...this._panResponder.panHandlers}>
+            <View style={this.props?.renderItemStyle} {...this._panResponder.panHandlers}>
                 {slideOutView}
                 {swipeableView}
             </View>
