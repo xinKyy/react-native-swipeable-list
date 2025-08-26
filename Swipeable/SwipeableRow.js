@@ -223,7 +223,11 @@ class SwipeableRow extends React.Component {
     }
 
     _swipeFullSpeed(gestureState) {
-        this.state.currentLeft.setValue(this._previousLeft + gestureState.dx);
+      let value = this._previousLeft + gestureState.dx;
+      if (this.props?.maxRightSwipeDistance){
+        value = Math.max(this._previousLeft + gestureState.dx, -this.props?.maxRightSwipeDistance)
+      }
+      this.state.currentLeft.setValue(value);
     }
 
     _swipeSlowSpeed(gestureState) {

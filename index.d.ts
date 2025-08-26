@@ -1,8 +1,8 @@
 import React from 'react';
-import { 
-  FlatListProps, 
-  ListRenderItemInfo, 
-  ViewStyle, 
+import {
+  FlatListProps,
+  ListRenderItemInfo,
+  ViewStyle,
   Animated
 } from 'react-native';
 
@@ -59,6 +59,8 @@ export interface SwipeableFlatListProps<ItemT> extends Omit<FlatListProps<ItemT>
   renderItem: (info: ListRenderItemInfo<ItemT>) => React.ReactElement;
   /** 渲染项目的样式 */
   renderItemStyle?: ViewStyle;
+  /** 向右滑动的最大距离 */
+  maxRightSwipeDistance?: number;
 }
 
 // SwipeableFlatList 组件的 State 类型
@@ -87,16 +89,16 @@ export declare class SwipeableFlatList<ItemT> extends React.Component<
     bounceFirstRowOnMount: boolean;
     renderQuickActions: () => null;
   };
-  
+
   /** 关闭当前打开的行 */
   close(): void;
-  
+
   /** 关闭指定键的行 */
   closeRow(key: string): void;
-  
+
   /** 打开指定键的行 */
   openRow(key: string): void;
-  
+
   /** 获取当前打开行的键 */
   getOpenRowKey(): string | null;
 }
@@ -108,10 +110,10 @@ export declare class SwipeableRow extends React.Component<
 > {
   /** 关闭行 */
   close(): void;
-  
+
   /** 打开行 */
   open(): void;
-  
+
   /** 检查行是否打开 */
   isOpen(): boolean;
 }
