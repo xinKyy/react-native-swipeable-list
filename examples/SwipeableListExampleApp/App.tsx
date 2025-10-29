@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useRef} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -113,12 +113,20 @@ function renderItemSeparator() {
 
 const App = () => {
   const [data, setData] = useState(dummyData);
+  // 添加 ref 用于调用关闭方法
+  const swipeableListRef = useRef<any>(null);
+
+  // 手动关闭展开的行
+  const handleCloseAll = () => {
+    swipeableListRef.current?.close();
+  };
 
   const deleteItem = (itemId: Item['id']) => {
     // ! Please don't do something like this in production. Use proper state management.
     const newState = [...data];
     const filteredState = newState.filter(item => item.id !== itemId);
-    return setData(filteredState);
+    setData(filteredState);
+    swipeableListRef.current?.close();
   };
 
   const archiveItem = (itemId: Item['id']) => {
@@ -165,8 +173,13 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <View style={styles.headerContainer}>
           <Text style={styles.headerText}>Inbox</Text>
+          {/* 添加关闭按钮，演示手动关闭功能 */}
+          <Pressable onPress={handleCloseAll} style={styles.closeButton}>
+            <Text style={styles.closeButtonText}>关闭所有</Text>
+          </Pressable>
         </View>
         <SwipeableFlatList
+          ref={swipeableListRef}
           keyExtractor={extractItemKey}
           data={data}
           renderItem={({item}: RenderItemProps) => (
@@ -192,15 +205,28 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     height: 80,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingTop: 10,
+    paddingHorizontal: 20,
+    flexDirection: 'row',
   },
   headerText: {
     fontSize: 30,
     fontWeight: '800',
     color: darkColors.onBackground,
     opacity: colorEmphasis.high,
+  },
+  closeButton: {
+    paddingHorizontal: 15,
+    paddingVertical: 8,
+    backgroundColor: darkColors.primary,
+    borderRadius: 6,
+  },
+  closeButtonText: {
+    color: darkColors.onBackground,
+    fontSize: 14,
+    fontWeight: '600',
   },
   item: {
     backgroundColor: '#121212',

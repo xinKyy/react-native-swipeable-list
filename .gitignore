@@ -16,3 +16,4 @@ node_modules
 
 # Xcode
 examples/SwipeableListExampleApp/ios/.xcode.env.local
+/.idea/

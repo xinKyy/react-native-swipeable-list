@@ -1,6 +1,6 @@
 {
   "name": "@xinkyy/react-native-swipeable-list",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A zero-dependency Swipeable FlatList for React-Native with Quick Actions, Gestures, and Animations. Fork of react-native-swipeable-list with additional improvements.",
   "main": "index.js",
   "types": "index.d.ts",

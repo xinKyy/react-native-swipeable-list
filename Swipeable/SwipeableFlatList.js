@@ -72,9 +72,10 @@ class SwipeableFlatList extends React.Component {
     }
 
     render() {
+        const { ref: _ignoredRef, ...otherProps } = this.props;
         return (
             <FlatList
-                {...this.props}
+                {...otherProps}
                 ref={ref => {
                     this._flatListRef = ref;
                 }}
@@ -85,13 +86,17 @@ class SwipeableFlatList extends React.Component {
         );
     }
 
-    _onScroll = e => {
-        // Close any opens rows on ListView scroll
+    close() {
         if (this.state.openRowKey) {
             this.setState({
                 openRowKey: null,
             });
         }
+    }
+
+    _onScroll = e => {
+        // Close any opens rows on ListView scroll
+        this.close();
 
         this.props.onScroll && this.props.onScroll(e);
     };
