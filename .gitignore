@@ -12,6 +12,7 @@ node_modules
 
 # macOS being a macOS
 .DS_Store
+.idea/*
 
 # Xcode
 examples/SwipeableListExampleApp/ios/.xcode.env.local
